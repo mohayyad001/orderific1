@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
   <style>
-    /* TailwindCSS and custom styles */
     @layer theme, base, components, utilities;
     @layer theme {
       :root, :host {
@@ -19,7 +18,7 @@
         --color-gray-800: oklch(0.278 0.033 256.848);
         --color-black: #000;
         --color-white: #fff;
-        --spacing: 0.25rem;
+        --spacing: 0.125rem;
         --text-xs: 0.75rem;
         --text-xs--line-height: calc(1 / 0.75);
         --text-base: 1rem;
@@ -281,7 +280,8 @@
       <div class="bg-white h-16 w-16 text-2xl font-bold rounded-full flex items-center justify-center">
         <img src="unnamed.webp" alt="brandLogo" class="w-8 h-8 object-contain" style="margin-top: -30px; margin-bottom: 10px;">
       </div>
-      <div class="w-auto h-auto gap-2 p-2 rounded-full bg-black text-white hidden lg:flex flex-col space-y-4 p-3">
+      <!-- Sidebar menu with adjusted gap -->
+      <div class="w-auto h-auto gap-2 p-2 rounded-full bg-black text-white hidden lg:flex flex-col space-y-2 p-3">
         <a href="/dashboard" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
           <img src="filee1.svg" alt="Dashboard">
         </a>
@@ -302,6 +302,7 @@
           <span class="absolute -top-1 -right-1 bg2 text-white w-4 h-4 min-w-4 gap-0 rounded-full pt-0 pr-1 pb-0 pl-1 border-2 border-black text-xs flex items-center justify-center">1</span>
         </a>
       </div>
+      <!-- Profile and Notification with consistent gap -->
       <div class="gap-2 p-2 rounded-full flex lg:flex-col flex-row lg:mb-5">
         <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden">
           <img src="4357ccf260ffcb69e9a74820541e8969.png" alt="profile" class="w-full h-full object-cover">
@@ -516,7 +517,7 @@
       const searchBtn = document.getElementById('searchBtn');
       const headerSection = document.getElementById('headerSection');
       const searchOverlay = document.getElementById('searchOverlay');
-      const searchCloseBtn = document.getElementById('searchCloseBtn');
+      const searchCloseBtn = document.getElementBy personallyId('searchCloseBtn');
       searchBtn.addEventListener('click', () => {
         headerSection.classList.add('hidden');
         searchOverlay.classList.remove('hidden');
